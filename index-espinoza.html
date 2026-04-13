@@ -1,0 +1,2007 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Espinoza & Asociados · Despacho de Abogados · Hermosillo, Sonora
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0e0e0e;
+        --ink2: #161616;
+        --ink3: #1e1e1e;
+        --ink4: #272727;
+        --ink5: #303030;
+        --gold: #b5922a;
+        --gold2: #cfa94a;
+        --gold3: #e8cc80;
+        --gold-dim: rgba(181, 146, 42, 0.12);
+        --stone: #e8e2d8;
+        --off: #c4bdb3;
+        --muted: #7a7570;
+        --light: #a8a29c;
+        --white: #ffffff;
+        --border: rgba(255, 255, 255, 0.06);
+        --border-g: rgba(181, 146, 42, 0.2);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--ink);
+        color: var(--light);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+        overflow-x: hidden;
+        line-height: 1.7;
+      }
+
+      /* ══════════════════════════════════════ NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3.5rem;
+        height: 74px;
+        background: rgba(14, 14, 14, 0.96);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-g);
+        animation: slideDown 0.55s ease both;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .nav-logo img {
+        height: 42px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.4rem;
+        list-style: none;
+        align-items: center;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 0.76rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: color 0.22s;
+      }
+      .nav-links a:hover {
+        color: var(--gold2);
+      }
+
+      .nav-cta {
+        border: 1px solid var(--border-g) !important;
+        color: var(--gold2) !important;
+        padding: 0.46rem 1.5rem !important;
+        transition:
+          background 0.22s,
+          border-color 0.22s !important;
+      }
+      .nav-cta:hover {
+        background: var(--gold-dim) !important;
+        border-color: var(--gold2) !important;
+      }
+
+      /* ══════════════════════════════════════ HERO */
+      #hero {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        padding-top: 74px;
+      }
+      @media (max-width: 860px) {
+        #hero {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── Left panel */
+      .hero-left {
+        padding: 7rem 3.5rem 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        border-right: 1px solid var(--border-g);
+      }
+      .hero-left::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          var(--gold) 25%,
+          var(--gold2) 75%,
+          transparent 100%
+        );
+        opacity: 0.6;
+      }
+
+      /* ── Right panel */
+      .hero-right {
+        background: var(--ink2);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 4rem 3rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-right-grid {
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.014) 0px,
+            rgba(255, 255, 255, 0.014) 1px,
+            transparent 1px,
+            transparent 64px
+          ),
+          repeating-linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.014) 0px,
+            rgba(255, 255, 255, 0.014) 1px,
+            transparent 1px,
+            transparent 64px
+          );
+      }
+      .hero-watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "EB Garamond", serif;
+        font-size: 16rem;
+        font-weight: 800;
+        color: rgba(181, 146, 42, 0.035);
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin-bottom: 2rem;
+        animation: fadeUp 0.6s 0.1s both;
+      }
+      .e-rule {
+        width: 36px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+      }
+      .e-tag {
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold2);
+      }
+
+      h1 {
+        font-family: "EB Garamond", serif;
+        font-weight: 700;
+        font-size: clamp(3rem, 5vw, 5.4rem);
+        line-height: 1.06;
+        color: var(--white);
+        margin-bottom: 1.8rem;
+        animation: fadeUp 0.6s 0.25s both;
+      }
+      h1 em {
+        font-style: italic;
+        display: block;
+        background: linear-gradient(90deg, var(--gold2), var(--gold3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+        font-weight: 300;
+        line-height: 1.88;
+        color: var(--muted);
+        max-width: 460px;
+        margin-bottom: 3rem;
+        animation: fadeUp 0.6s 0.4s both;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        animation: fadeUp 0.6s 0.55s both;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.9rem 2rem;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 1px;
+        transition: all 0.22s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold2));
+        color: var(--ink);
+      }
+      .btn-gold:hover {
+        opacity: 0.88;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(181, 146, 42, 0.3);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--light);
+        border: 1px solid var(--border);
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold2);
+        color: var(--gold3);
+        transform: translateY(-2px);
+      }
+
+      /* Practice list on right */
+      .hero-right-content {
+        position: relative;
+      }
+      .right-label {
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .practice-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .practice-list li {
+        padding: 1.15rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-family: "EB Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--off);
+        cursor: default;
+        transition:
+          color 0.2s,
+          padding-left 0.25s;
+        animation: fadeUp 0.5s both;
+      }
+      .practice-list li:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .practice-list li:hover {
+        color: var(--white);
+        padding-left: 0.5rem;
+      }
+      .p-num {
+        font-size: 0.68rem;
+        color: var(--gold2);
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        min-width: 26px;
+      }
+      .p-arr {
+        margin-left: auto;
+        font-size: 0.85rem;
+        color: var(--ink4);
+        transition: color 0.22s;
+      }
+      .practice-list li:hover .p-arr {
+        color: var(--gold2);
+      }
+
+      /* Hero stats */
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        animation: fadeUp 0.6s 0.72s both;
+      }
+      .h-stat {
+        flex: 1;
+        min-width: 110px;
+        padding: 1.8rem 1.8rem 0 0;
+      }
+      .h-stat + .h-stat {
+        padding-left: 1.8rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .h-stat .num {
+        font-family: "EB Garamond", serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+      }
+      .h-stat .num sup {
+        font-size: 1.1rem;
+        color: var(--gold2);
+        vertical-align: super;
+      }
+      .h-stat .lbl {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.35rem;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ══════════════════════════════════════ DIVIDERS */
+      .gold-line {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          var(--gold) 0%,
+          var(--gold2) 50%,
+          transparent 100%
+        );
+        opacity: 0.45;
+      }
+
+      /* ══════════════════════════════════════ SECTION BASE */
+      section {
+        padding: 7rem 3.5rem;
+      }
+
+      .s-label {
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .s-label::before {
+        content: "";
+        width: 24px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+      }
+
+      h2 {
+        font-family: "EB Garamond", serif;
+        font-weight: 700;
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        color: var(--white);
+        line-height: 1.15;
+        margin-bottom: 1rem;
+      }
+      h2 em {
+        font-style: italic;
+        color: var(--stone);
+      }
+      .s-intro {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.9;
+        font-weight: 300;
+        max-width: 540px;
+        margin-bottom: 3.5rem;
+      }
+
+      /* ══════════════════════════════════════ INTRO BAND */
+      #intro {
+        background: var(--ink2);
+        padding: 5rem 3.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+      @media (max-width: 860px) {
+        #intro {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .intro-block {
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--border-g);
+      }
+      .intro-block h3 {
+        font-family: "EB Garamond", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.65rem;
+      }
+      .intro-block p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+      }
+
+      /* ══════════════════════════════════════ AREAS */
+      #areas {
+        background: var(--ink);
+      }
+
+      .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(181, 146, 42, 0.07);
+        border: 1px solid rgba(181, 146, 42, 0.07);
+      }
+      @media (max-width: 900px) {
+        .areas-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 540px) {
+        .areas-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .area-card {
+        background: var(--ink);
+        padding: 2.8rem 2.2rem;
+        transition: background 0.3s;
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+      }
+      .area-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s;
+      }
+      .area-card:hover {
+        background: var(--ink3);
+      }
+      .area-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .area-num {
+        font-family: "EB Garamond", serif;
+        font-size: 4rem;
+        font-weight: 800;
+        color: rgba(181, 146, 42, 0.1);
+        line-height: 1;
+        margin-bottom: 0.9rem;
+      }
+      .area-card h3 {
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.8rem;
+      }
+      .area-card p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+      }
+      .area-tag {
+        display: inline-block;
+        margin-top: 1.5rem;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        border-bottom: 1px solid var(--border-g);
+        padding-bottom: 0.15rem;
+      }
+
+      /* ══════════════════════════════════════ PROCESO */
+      #proceso {
+        background: var(--ink2);
+        padding-bottom: 0;
+      }
+
+      .proceso-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      @media (max-width: 800px) {
+        .proceso-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 440px) {
+        .proceso-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .p-step {
+        background: var(--ink2);
+        padding: 2.5rem 2rem;
+        transition: background 0.25s;
+      }
+      .p-step:hover {
+        background: var(--ink3);
+      }
+      .p-step-num {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-bottom: 1.2rem;
+      }
+      .p-step h4 {
+        font-family: "EB Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.6rem;
+      }
+      .p-step p {
+        font-size: 0.83rem;
+        color: var(--muted);
+        line-height: 1.82;
+        font-weight: 300;
+      }
+
+      /* ══════════════════════════════════════ NOSOTROS */
+      #nosotros {
+        background: var(--ink);
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        #nosotros {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+      }
+
+      .values-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 2.5rem;
+      }
+      .value-item {
+        display: flex;
+        gap: 1.6rem;
+        padding: 1.8rem 0;
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+      }
+      .value-item:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .v-num {
+        font-family: "EB Garamond", serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: rgba(181, 146, 42, 0.2);
+        line-height: 1;
+        min-width: 32px;
+        flex-shrink: 0;
+        margin-top: -0.15rem;
+      }
+      .value-item h4 {
+        font-family: "EB Garamond", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.35rem;
+      }
+      .value-item p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.82;
+        font-weight: 300;
+      }
+
+      .about-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .testimonial-card {
+        background: var(--ink2);
+        border: 1px solid var(--border-g);
+        border-left: 3px solid var(--gold);
+        padding: 2.2rem 2rem;
+      }
+      .t-open {
+        font-family: "EB Garamond", serif;
+        font-size: 3.5rem;
+        color: rgba(181, 146, 42, 0.15);
+        line-height: 0.8;
+        margin-bottom: 0.4rem;
+      }
+      .t-quote {
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--off);
+        line-height: 1.75;
+        margin-bottom: 1.2rem;
+      }
+      .t-meta {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold2);
+      }
+      .t-stars {
+        color: var(--gold2);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        margin-top: 0.3rem;
+      }
+
+      .stat-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: rgba(181, 146, 42, 0.07);
+        border: 1px solid rgba(181, 146, 42, 0.07);
+      }
+      .stat-block {
+        background: var(--ink2);
+        padding: 1.8rem;
+        text-align: center;
+      }
+      .stat-block .n {
+        font-family: "EB Garamond", serif;
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: var(--white);
+        line-height: 1;
+      }
+      .stat-block .n span {
+        color: var(--gold2);
+      }
+      .stat-block .l {
+        font-size: 0.66rem;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 0.35rem;
+      }
+
+      /* ══════════════════════════════════════ FAQ */
+      #faq {
+        background: var(--ink2);
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        #faq {
+          grid-template-columns: 1fr;
+          gap: 3.5rem;
+        }
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .faq-item:first-child {
+        border-top: 1px solid var(--border);
+      }
+      .faq-q {
+        width: 100%;
+        background: none;
+        border: none;
+        color: var(--light);
+        padding: 1.4rem 0;
+        font-family: "Jost", sans-serif;
+        font-size: 0.875rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: left;
+        transition: color 0.2s;
+      }
+      .faq-q:hover {
+        color: var(--gold3);
+      }
+      .faq-icon {
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--border-g);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        color: var(--gold2);
+        flex-shrink: 0;
+        transition:
+          transform 0.3s,
+          background 0.22s;
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+        background: var(--gold-dim);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.38s ease,
+          padding 0.38s;
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+        padding: 0;
+      }
+      .faq-item.open .faq-a {
+        max-height: 260px;
+        padding-bottom: 1.4rem;
+      }
+
+      .faq-aside {
+        position: sticky;
+        top: 96px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .cta-card {
+        background: var(--ink3);
+        border: 1px solid var(--border-g);
+        padding: 2.8rem 2.4rem;
+      }
+      .cta-card h3 {
+        font-family: "EB Garamond", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.22;
+        margin-bottom: 1rem;
+      }
+      .cta-card p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+      .cta-divider {
+        height: 1px;
+        background: var(--border-g);
+        margin: 1.6rem 0;
+      }
+      .cta-detail {
+        margin-bottom: 0.9rem;
+      }
+      .cta-label {
+        font-size: 0.64rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.15rem;
+        font-weight: 500;
+      }
+      .cta-val {
+        font-size: 0.9rem;
+        color: var(--light);
+      }
+      .cta-val a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .cta-val a:hover {
+        color: var(--gold2);
+      }
+
+      /* ══════════════════════════════════════ CONTACTO */
+      #contacto {
+        background: var(--ink3);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        padding: 0;
+      }
+      @media (max-width: 800px) {
+        #contacto {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .contact-left {
+        padding: 7rem 3.5rem;
+        border-right: 1px solid var(--border);
+      }
+      .contact-right {
+        padding: 7rem 3.5rem;
+      }
+
+      .contact-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2.5rem;
+      }
+      .ci {
+        display: flex;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+      .ci-tag {
+        min-width: 42px;
+        height: 42px;
+        border: 1px solid var(--border-g);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        flex-shrink: 0;
+      }
+      .ci-label {
+        font-size: 0.64rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+        font-weight: 500;
+      }
+      .ci-val {
+        font-size: 0.9rem;
+        color: var(--light);
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .ci-val a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .ci-val a:hover {
+        color: var(--gold2);
+      }
+
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2.2rem;
+      }
+      .schedule-table td {
+        padding: 0.82rem 0;
+        font-size: 0.85rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .schedule-table td:last-child {
+        text-align: right;
+        color: var(--muted);
+      }
+      .schedule-table tr.closed td {
+        color: rgba(122, 117, 112, 0.35);
+      }
+
+      .disclaimer {
+        margin-top: 2.5rem;
+        padding: 1.5rem 1.8rem;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.015);
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.78;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      .consult-block {
+        background: var(--ink4);
+        border: 1px solid var(--border-g);
+        border-left: 3px solid var(--gold);
+        padding: 2.4rem 2rem;
+        margin-top: 2.5rem;
+      }
+      .consult-block h4 {
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.6rem;
+      }
+      .consult-block p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.82;
+        font-weight: 300;
+        margin-bottom: 1.6rem;
+      }
+
+      .pull-quote {
+        margin-top: 2rem;
+        padding: 1.8rem 2rem;
+        border: 1px solid var(--border-g);
+        background: rgba(181, 146, 42, 0.03);
+      }
+      .pull-quote q {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--off);
+        line-height: 1.78;
+        quotes: none;
+      }
+      .pull-quote cite {
+        display: block;
+        font-size: 0.64rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-top: 1rem;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      /* ══════════════════════════════════════ MAP */
+      #mapa {
+        padding: 0;
+      }
+      .map-container {
+        position: relative;
+        height: 390px;
+        overflow: hidden;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(100%) brightness(0.65) sepia(10%);
+      }
+      .map-badge {
+        position: absolute;
+        top: 2rem;
+        left: 3.5rem;
+        background: var(--ink);
+        border: 1px solid var(--border-g);
+        padding: 1.1rem 1.7rem;
+      }
+      .map-badge strong {
+        display: block;
+        font-family: "EB Garamond", serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 0.15rem;
+      }
+      .map-badge span {
+        font-size: 0.74rem;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* ══════════════════════════════════════ FOOTER */
+      footer {
+        background: #090909;
+        border-top: 1px solid var(--border-g);
+        padding: 3.5rem;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border);
+      }
+      @media (max-width: 700px) {
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .footer-brand img {
+        height: 38px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin-bottom: 1.2rem;
+      }
+      .footer-brand p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.82;
+        font-weight: 300;
+        max-width: 260px;
+      }
+
+      .footer-col h5 {
+        font-size: 0.64rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-bottom: 1.2rem;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .footer-col ul li {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .footer-col ul li a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--off);
+      }
+
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-bottom p {
+        font-size: 0.72rem;
+        color: rgba(122, 117, 112, 0.45);
+        letter-spacing: 0.04em;
+      }
+      .footer-links {
+        display: flex;
+        gap: 0.6rem;
+      }
+      .footer-links a {
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.42rem 0.9rem;
+        border: 1px solid var(--border);
+        transition: all 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--gold2);
+        border-color: var(--border-g);
+      }
+
+      /* ══════════════════════════════════════ REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.68s ease,
+          transform 0.68s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ══════════════════════════════════════ RESPONSIVE */
+      @media (max-width: 700px) {
+        nav {
+          padding: 0 1.25rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: 5rem 1.25rem;
+        }
+        .hero-left {
+          padding: 5rem 1.25rem 4rem;
+        }
+        .hero-right {
+          padding: 3rem 1.25rem;
+        }
+        #intro,
+        #nosotros,
+        #faq {
+          padding: 5rem 1.25rem;
+        }
+        .contact-left,
+        .contact-right {
+          padding: 4.5rem 1.25rem;
+        }
+        .map-badge {
+          left: 1.25rem;
+        }
+        footer {
+          padding: 3rem 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════ NAV ══════════════════════ -->
+    <nav>
+      <div class="nav-logo">
+        <img src="espinoza-logo.png" alt="Espinoza & Asociados Abogados" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#nosotros">El despacho</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#contacto" class="nav-cta">Consulta inicial</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══════════════════════ HERO ══════════════════════ -->
+    <section id="hero">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <div class="e-rule"></div>
+          <span class="e-tag">Despacho de Abogados · Hermosillo, Sonora</span>
+        </div>
+        <h1>Defensa legal<br />que puedes<br /><em>confiar.</em></h1>
+        <p class="hero-sub">
+          Somos un despacho especializado en Derecho Familiar y Derecho Penal
+          con sede en Hermosillo, Sonora. Brindamos asesoría jurídica
+          personalizada, representación legal comprometida y acompañamiento
+          constante en cada etapa de tu proceso.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-gold"
+            >Solicitar consulta inicial</a
+          >
+          <a href="#areas" class="btn btn-ghost">Ver áreas de práctica</a>
+        </div>
+        <div class="hero-stats">
+          <div class="h-stat">
+            <div class="num">2<sup>k+</sup></div>
+            <div class="lbl">Seguidores Facebook</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">2</div>
+            <div class="lbl">Especialidades clave</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">100<sup>%</sup></div>
+            <div class="lbl">Compromiso con el caso</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-right-grid"></div>
+        <div class="hero-watermark">E&amp;A</div>
+        <div class="hero-right-content">
+          <p class="right-label">Áreas de práctica</p>
+          <ul class="practice-list">
+            <li style="animation-delay: 0.2s">
+              <span class="p-num">01</span>Derecho Familiar<span class="p-arr"
+                >→</span
+              >
+            </li>
+            <li style="animation-delay: 0.3s">
+              <span class="p-num">02</span>Derecho Penal<span class="p-arr"
+                >→</span
+              >
+            </li>
+            <li style="animation-delay: 0.4s">
+              <span class="p-num">03</span>Divorcios y Custodia<span
+                class="p-arr"
+                >→</span
+              >
+            </li>
+            <li style="animation-delay: 0.5s">
+              <span class="p-num">04</span>Pensión Alimenticia<span
+                class="p-arr"
+                >→</span
+              >
+            </li>
+            <li style="animation-delay: 0.6s">
+              <span class="p-num">05</span>Defensa en Juicio Oral<span
+                class="p-arr"
+                >→</span
+              >
+            </li>
+            <li style="animation-delay: 0.7s">
+              <span class="p-num">06</span>Asesoría y Representación<span
+                class="p-arr"
+                >→</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <!-- ══════════════════════ INTRO BAND ══════════════════════ -->
+    <div id="intro">
+      <div class="intro-block reveal">
+        <h3>Confidencialidad absoluta</h3>
+        <p>
+          Todo lo que compartes con nosotros permanece bajo estricta reserva
+          profesional. La discreción no es una opción, es un deber ético y una
+          condición indispensable para el ejercicio honesto del derecho.
+        </p>
+      </div>
+      <div class="intro-block reveal" style="transition-delay: 0.15s">
+        <h3>Atención directa y personalizada</h3>
+        <p>
+          Cada cliente recibe atención por parte de los abogados responsables de
+          su caso. No somos un despacho de volumen: tu asunto merece el tiempo y
+          la dedicación que requiere, en cada etapa del proceso.
+        </p>
+      </div>
+      <div class="intro-block reveal" style="transition-delay: 0.3s">
+        <h3>Honestidad sobre tus opciones</h3>
+        <p>
+          Te decimos lo que necesitas escuchar. Evaluamos con objetividad las
+          posibilidades reales de tu caso y te presentamos escenarios honestos
+          antes de comprometer tu tiempo y tus recursos.
+        </p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════ AREAS ══════════════════════ -->
+    <section id="areas">
+      <div class="s-label">Áreas de práctica</div>
+      <h2>Especialización que<br /><em>marca la diferencia.</em></h2>
+      <p class="s-intro">
+        El derecho exige no solo conocimiento técnico, sino experiencia práctica
+        acumulada en los tribunales. Nuestro equipo se ha formado en las áreas
+        donde la complejidad humana y jurídica convergen con mayor intensidad:
+        la familia y el sistema penal acusatorio.
+      </p>
+
+      <div class="areas-grid">
+        <div class="area-card reveal">
+          <div class="area-num">01</div>
+          <h3>Derecho Familiar</h3>
+          <p>
+            Asesoría y representación en todos los asuntos que impactan el
+            núcleo familiar. Abordamos cada caso con discreción, empatía y rigor
+            jurídico, reconociendo que detrás de cada expediente existe una
+            situación humana que merece soluciones reales y duraderas.
+          </p>
+          <span class="area-tag">Familiar</span>
+        </div>
+        <div class="area-card reveal" style="transition-delay: 0.1s">
+          <div class="area-num">02</div>
+          <h3>Derecho Penal</h3>
+          <p>
+            Defensa técnica en el Sistema Penal Acusatorio ante Juzgados de
+            Control, Tribunales de Juicio Oral y etapas de ejecución.
+            Representamos tanto a víctimas como a imputados con un enfoque
+            estratégico orientado a resultados concretos y verificables.
+          </p>
+          <span class="area-tag">Penal · Acusatorio</span>
+        </div>
+        <div class="area-card reveal" style="transition-delay: 0.2s">
+          <div class="area-num">03</div>
+          <h3>Divorcios y Separaciones</h3>
+          <p>
+            Tramitación de divorcios voluntarios y contenciosos, incluyendo
+            liquidación de sociedad conyugal, división de bienes y acuerdos
+            sobre guarda y custodia. Procuramos siempre vías de acuerdo que
+            reduzcan el conflicto y el costo emocional para todas las partes.
+          </p>
+          <span class="area-tag">Familiar · Civil</span>
+        </div>
+        <div class="area-card reveal">
+          <div class="area-num">04</div>
+          <h3>Guarda, Custodia y Convivencia</h3>
+          <p>
+            Determinación y modificación de regímenes de custodia,
+            establecimiento de convivencias supervisadas y no supervisadas, y
+            representación en controversias donde el bienestar superior del
+            menor es el eje rector de toda actuación jurídica.
+          </p>
+          <span class="area-tag">Menores · Familiar</span>
+        </div>
+        <div class="area-card reveal" style="transition-delay: 0.1s">
+          <div class="area-num">05</div>
+          <h3>Pensión Alimenticia</h3>
+          <p>
+            Fijación, incremento, reducción y ejecución forzosa de obligaciones
+            alimentarias. Asesoramos a acreedores y deudores alimentarios,
+            gestionando acuerdos extrajudiciales cuando son posibles y
+            procedimientos contenciosos cuando la situación lo requiere.
+          </p>
+          <span class="area-tag">Alimentos · Familiar</span>
+        </div>
+        <div class="area-card reveal" style="transition-delay: 0.2s">
+          <div class="area-num">06</div>
+          <h3>Asesoría y Consultoría Legal</h3>
+          <p>
+            Primera consulta orientada a entender tu situación jurídica, evaluar
+            las opciones disponibles y definir la estrategia más adecuada.
+            Brindamos información clara, honesta y accesible sobre tus derechos
+            y las vías legales realmente disponibles para tu caso.
+          </p>
+          <span class="area-tag">Consultoría</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ PROCESO ══════════════════════ -->
+    <section id="proceso">
+      <div class="s-label">Cómo trabajamos</div>
+      <h2>Claridad y compromiso<br /><em>desde el primer día.</em></h2>
+      <p class="s-intro">
+        Sabemos que acudir a un abogado puede generar incertidumbre. Por eso
+        hemos construido un proceso transparente y humano, orientado a que
+        siempre sepas en qué etapa está tu asunto y qué viene a continuación.
+      </p>
+    </section>
+    <div class="proceso-grid">
+      <div class="p-step reveal">
+        <div class="p-step-num">Etapa 01</div>
+        <h4>Consulta inicial</h4>
+        <p>
+          Escuchamos tu caso en detalle, sin interrupciones. Analizamos los
+          hechos, identificamos los elementos jurídicos relevantes y te
+          explicamos con claridad cuáles son tus opciones reales, sin
+          tecnicismos innecesarios ni compromisos previos.
+        </p>
+      </div>
+      <div class="p-step reveal" style="transition-delay: 0.12s">
+        <div class="p-step-num">Etapa 02</div>
+        <h4>Diagnóstico jurídico</h4>
+        <p>
+          Evaluamos a fondo la situación legal, revisamos la documentación
+          existente, identificamos fortalezas y vulnerabilidades del caso y
+          definimos la estrategia jurídica más adecuada para tus objetivos y
+          circunstancias específicas.
+        </p>
+      </div>
+      <div class="p-step reveal" style="transition-delay: 0.24s">
+        <div class="p-step-num">Etapa 03</div>
+        <h4>Representación activa</h4>
+        <p>
+          Actuamos en tu nombre ante los tribunales, fiscalías y autoridades
+          competentes con diligencia y rigor técnico. Te mantenemos informado de
+          cada avance, resolución y notificación a lo largo de todo el proceso
+          legal.
+        </p>
+      </div>
+      <div class="p-step reveal" style="transition-delay: 0.36s">
+        <div class="p-step-num">Etapa 04</div>
+        <h4>Seguimiento y cierre</h4>
+        <p>
+          Concluido el procedimiento, revisamos el cumplimiento de las
+          resoluciones, ejecutamos sentencias cuando es necesario y te
+          asesoramos sobre las implicaciones futuras de los acuerdos o
+          resoluciones obtenidas.
+        </p>
+      </div>
+    </div>
+    <div style="background: var(--ink2); height: 7rem"></div>
+
+    <!-- ══════════════════════ NOSOTROS ══════════════════════ -->
+    <section id="nosotros">
+      <div>
+        <div class="s-label">El despacho</div>
+        <h2>Abogados comprometidos<br /><em>con tu caso.</em></h2>
+        <p
+          style="
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.9;
+            font-weight: 300;
+            max-width: 480px;
+          "
+        >
+          En Espinoza & Asociados entendemos que los asuntos que llegan a un
+          despacho de abogados rara vez son únicamente jurídicos. Son
+          situaciones humanas complejas que requieren conocimiento técnico del
+          derecho, sensibilidad, discreción y un compromiso genuino con el
+          bienestar de quien nos confía su caso.
+        </p>
+        <div class="values-list">
+          <div class="value-item reveal">
+            <div class="v-num">01</div>
+            <div>
+              <h4>Confidencialidad y discreción</h4>
+              <p>
+                Todo lo que compartes con nuestro equipo permanece bajo estricta
+                reserva profesional. La confidencialidad no es una promesa de
+                marketing, es una obligación deontológica que tomamos con
+                absoluta seriedad en cada caso que atendemos.
+              </p>
+            </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="v-num">02</div>
+            <div>
+              <h4>Representación sin delegación</h4>
+              <p>
+                No somos un despacho de volumen. Cada cliente recibe atención
+                directa por parte de los abogados responsables de su expediente,
+                sin ser delegado a personal auxiliar en las etapas procesales
+                que verdaderamente definen el resultado.
+              </p>
+            </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="v-num">03</div>
+            <div>
+              <h4>Diagnóstico honesto</h4>
+              <p>
+                Te decimos lo que necesitas escuchar antes de comprometer tiempo
+                y recursos. Evaluamos con objetividad las posibilidades reales
+                de tu caso y te presentamos un panorama honesto que te permita
+                tomar decisiones informadas.
+              </p>
+            </div>
+          </div>
+          <div class="value-item reveal">
+            <div class="v-num">04</div>
+            <div>
+              <h4>Especialización enfocada</h4>
+              <p>
+                La concentración en Derecho Familiar y Penal nos permite
+                mantener un nivel de actualización y práctica que los despachos
+                generalistas difícilmente pueden igualar. Especializarse es una
+                forma de respetar a nuestros clientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="testimonial-card reveal">
+          <div class="t-open">"</div>
+          <p class="t-quote">
+            Excelente atención en todo momento. Éticos, profesionales y me
+            resolvieron un tema penal en el que mi hijo era inocente. Fueron
+            sumamente cordiales durante todo el proceso y lograron ganar el
+            caso.
+          </p>
+          <div class="t-meta">Cliente verificado · Facebook</div>
+          <div class="t-stars">★ ★ ★ ★ ★</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="t-open">"</div>
+          <p class="t-quote">
+            Muy amables desde la primera llamada. Explicaron con claridad todos
+            los pasos del proceso y nunca me dejaron con dudas. Se nota que
+            conocen perfectamente la materia y que realmente les importa el
+            resultado.
+          </p>
+          <div class="t-meta">Cliente verificado · Instagram</div>
+          <div class="t-stars">★ ★ ★ ★ ★</div>
+        </div>
+        <div class="stat-pair reveal">
+          <div class="stat-block">
+            <div class="n">2<span>k+</span></div>
+            <div class="l">Seguidores Facebook</div>
+          </div>
+          <div class="stat-block">
+            <div class="n">100<span>%</span></div>
+            <div class="l">Dedicación por caso</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ FAQ ══════════════════════ -->
+    <section id="faq">
+      <div>
+        <div class="s-label">Preguntas frecuentes</div>
+        <h2>Lo que más nos<br /><em>preguntan.</em></h2>
+        <p
+          style="
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.88;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+          "
+        >
+          Si tienes una duda que no aparece aquí, te invitamos a contactarnos
+          directamente. La consulta inicial nos permite entender tu situación y
+          orientarte sin ningún compromiso previo.
+        </p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Qué necesito llevar a la primera consulta?<span class="faq-icon"
+                >+</span
+              >
+            </button>
+            <div class="faq-a">
+              Cualquier documento que consideres relevante: identificaciones,
+              actas de estado civil, sentencias previas, contratos,
+              comunicaciones escritas o resoluciones judiciales. Si no sabes qué
+              llevar, no te preocupes — en la consulta te orientamos sobre qué
+              documentación será útil recopilar para fortalecer tu posición.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Cuánto tiempo dura un proceso de divorcio en Sonora?<span
+                class="faq-icon"
+                >+</span
+              >
+            </button>
+            <div class="faq-a">
+              Depende del tipo de divorcio y del nivel de acuerdo entre las
+              partes. Un divorcio voluntario por mutuo consentimiento puede
+              resolverse en semanas cuando existe acuerdo sobre bienes, custodia
+              y alimentos. Un divorcio contencioso puede tomar varios meses. En
+              la consulta inicial te proporcionamos un estimado realista según
+              las características de tu situación particular.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Qué es el Sistema Penal Acusatorio y cómo me afecta?<span
+                class="faq-icon"
+                >+</span
+              >
+            </button>
+            <div class="faq-a">
+              Es el sistema de justicia penal vigente en México desde 2016,
+              basado en audiencias orales y en los principios de publicidad y
+              contradicción entre las partes. Si tú o un familiar enfrenta una
+              acusación penal, es fundamental contar con un abogado
+              familiarizado con este sistema para garantizar una defensa técnica
+              efectiva desde la primera audiencia.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Representan tanto a víctimas como a imputados en materia
+              penal?<span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Sí. En materia penal brindamos representación tanto a víctimas del
+              delito como a personas imputadas. Ambas partes tienen derechos que
+              deben ser ejercidos con rigor técnico. En la consulta analizamos
+              tu posición en el proceso y definimos la estrategia jurídica más
+              adecuada para tus objetivos específicos.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Puedo solicitar pensión alimenticia sin haber estado
+              casados?<span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Sí. La obligación alimentaria en favor de los hijos existe
+              independientemente de si los padres estuvieron casados, vivieron
+              en concubinato o tuvieron una relación sin formalidad legal. Lo
+              que determina la obligación es la relación de parentesco, no el
+              estado civil de los progenitores.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Atienden casos urgentes con personas detenidas?<span
+                class="faq-icon"
+                >+</span
+              >
+            </button>
+            <div class="faq-a">
+              Sí. Los asuntos penales con personas detenidas son situaciones que
+              requieren intervención inmediata. Si un familiar fue detenido,
+              comunícate con nosotros lo antes posible para garantizar que sus
+              derechos sean respetados desde la audiencia inicial de control de
+              detención, que debe celebrarse dentro de las primeras 48 horas de
+              la detención.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              ¿Pueden modificar un acuerdo de custodia ya existente?<span
+                class="faq-icon"
+                >+</span
+              >
+            </button>
+            <div class="faq-a">
+              Sí. Los regímenes de guarda, custodia y convivencia pueden
+              modificarse cuando existe un cambio sustancial en las
+              circunstancias que los originaron. Te asesoramos para determinar
+              si tu situación amerita una solicitud de modificación y, en su
+              caso, tramitarla ante el Juzgado de lo Familiar correspondiente en
+              Hermosillo.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-aside">
+        <div class="cta-card reveal">
+          <h3>¿Necesitas orientación sobre tu situación legal?</h3>
+          <p>
+            La consulta inicial es el primer paso. En ella evaluamos tu caso con
+            honestidad, te explicamos tus opciones reales y definimos juntos el
+            camino a seguir, sin compromisos previos de ningún tipo.
+          </p>
+          <a
+            href="#contacto"
+            class="btn btn-gold"
+            style="width: 100%; justify-content: center"
+          >
+            Solicitar consulta inicial
+          </a>
+          <div class="cta-divider"></div>
+          <div class="cta-detail">
+            <div class="cta-label">Especialidades</div>
+            <div class="cta-val">Derecho Familiar y Derecho Penal</div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-label">Ubicación</div>
+            <div class="cta-val">Hermosillo, Sonora</div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-label">Facebook</div>
+            <div class="cta-val">
+              <a
+                href="https://www.facebook.com/DespachoEspinozaAsociados/"
+                target="_blank"
+                >Despacho Espinoza & Asociados</a
+              >
+            </div>
+          </div>
+          <div class="cta-detail">
+            <div class="cta-label">Instagram</div>
+            <div class="cta-val">
+              <a
+                href="https://www.instagram.com/despachodeabogadosespinoza/"
+                target="_blank"
+                >@despachodeabogadosespinoza</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ CONTACTO ══════════════════════ -->
+    <div class="gold-line"></div>
+    <section id="contacto">
+      <div class="contact-left">
+        <div class="s-label">Dónde encontrarnos</div>
+        <h2>Visítanos en<br /><em>Hermosillo.</em></h2>
+        <div class="contact-items">
+          <div class="ci">
+            <div class="ci-tag">Ubi</div>
+            <div>
+              <div class="ci-label">Ubicación</div>
+              <div class="ci-val">Hermosillo, Sonora, México</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-tag">FB</div>
+            <div>
+              <div class="ci-label">Facebook</div>
+              <div class="ci-val">
+                <a
+                  href="https://www.facebook.com/DespachoEspinozaAsociados/"
+                  target="_blank"
+                  >Despacho de Abogados Espinoza & Asociados</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-tag">IG</div>
+            <div>
+              <div class="ci-label">Instagram</div>
+              <div class="ci-val">
+                <a
+                  href="https://www.instagram.com/despachodeabogadosespinoza/"
+                  target="_blank"
+                  >@despachodeabogadosespinoza</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table class="schedule-table">
+          <tr>
+            <td>Lunes</td>
+            <td>09:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Martes</td>
+            <td>09:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>09:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Jueves</td>
+            <td>09:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Viernes</td>
+            <td>09:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Sábado</td>
+            <td>Con cita previa</td>
+          </tr>
+          <tr class="closed">
+            <td>Domingo</td>
+            <td>Cerrado</td>
+          </tr>
+        </table>
+
+        <div class="disclaimer">
+          La información contenida en este sitio tiene un propósito meramente
+          informativo y no constituye asesoría jurídica formal. Cada caso es
+          único. Para recibir orientación legal específica sobre tu situación,
+          te invitamos a solicitar una consulta directa con nuestro equipo.
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="s-label">Consulta inicial</div>
+        <h2>Tu caso merece<br /><em>atención directa.</em></h2>
+        <p
+          style="
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.88;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+          "
+        >
+          En Espinoza & Asociados no tratamos expedientes: atendemos personas.
+          Comunícate a través de nuestras redes sociales para agendar una
+          consulta en la que podremos escuchar tu caso, orientarte sobre tus
+          opciones y definir el siguiente paso con claridad.
+        </p>
+
+        <div class="consult-block">
+          <h4>¿Por qué es importante actuar pronto?</h4>
+          <p>
+            En materia penal, los plazos procesales son estrictos y el tiempo
+            disponible para ejercer derechos puede ser limitado. En asuntos
+            familiares, la demora puede afectar acuerdos de custodia, pensiones
+            y medidas cautelares. Consultar a tiempo marca la diferencia entre
+            tener opciones disponibles o enfrentar situaciones ya consumadas.
+          </p>
+          <a
+            href="https://www.facebook.com/DespachoEspinozaAsociados/"
+            target="_blank"
+            class="btn btn-gold"
+          >
+            Contactar por Facebook
+          </a>
+        </div>
+
+        <div class="pull-quote">
+          <q
+            >El derecho no es solo una herramienta técnica. Es la forma en que
+            la sociedad reconoce tu dignidad cuando esta es cuestionada.</q
+          >
+          <cite
+            >Espinoza & Asociados · Despacho de Abogados · Hermosillo,
+            Sonora</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ MAP ══════════════════════ -->
+    <div id="mapa">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55804!2d-110.9559!3d29.0729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84f23f7b9de5%3A0x3f4855fe5bc16a00!2sHermosillo%2C+Son.!5e0!3m2!1ses!2smx!4v1"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+        <div class="map-badge">
+          <strong>Espinoza & Asociados</strong>
+          <span>Despacho de Abogados · Hermosillo, Sonora</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════ FOOTER ══════════════════════ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="espinoza-logo.png" alt="Espinoza & Asociados" />
+          <p>
+            Despacho de abogados especializado en Derecho Familiar y Derecho
+            Penal, con sede en Hermosillo, Sonora. Asesoría personalizada y
+            representación comprometida.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Áreas de práctica</h5>
+          <ul>
+            <li><a href="#areas">Derecho Familiar</a></li>
+            <li><a href="#areas">Derecho Penal</a></li>
+            <li><a href="#areas">Divorcios y Separaciones</a></li>
+            <li><a href="#areas">Guarda y Custodia</a></li>
+            <li><a href="#areas">Pensión Alimenticia</a></li>
+            <li><a href="#areas">Asesoría Legal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Despacho</h5>
+          <ul>
+            <li><a href="#proceso">Proceso de trabajo</a></li>
+            <li><a href="#nosotros">El despacho</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li>
+              <a
+                href="https://www.facebook.com/DespachoEspinozaAsociados/"
+                target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/despachodeabogadosespinoza/"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2025 Espinoza & Asociados · Despacho de Abogados · Hermosillo,
+          Sonora · Todos los derechos reservados.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://www.facebook.com/DespachoEspinozaAsociados/"
+            target="_blank"
+            >Facebook</a
+          >
+          <a
+            href="https://www.instagram.com/despachodeabogadosespinoza/"
+            target="_blank"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((el) => el.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
