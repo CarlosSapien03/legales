@@ -1,0 +1,1991 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IGS Ibarra Gardner Seguros · Hermosillo, Sonora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #060f26;
+        --navy2: #091630;
+        --navy3: #0d1e40;
+        --navy4: #112350;
+        --gold: #b8962e;
+        --gold2: #d4af5a;
+        --gold3: #ead08a;
+        --white: #ffffff;
+        --muted: #7a8aaa;
+        --light: #c8d4ea;
+        --border: rgba(184, 150, 46, 0.18);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--navy);
+        color: var(--light);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+        overflow-x: hidden;
+        line-height: 1.7;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3.5rem;
+        height: 76px;
+        background: rgba(6, 15, 38, 0.94);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid var(--border);
+        animation: slideDown 0.6s ease both;
+      }
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .nav-logo img {
+        height: 44px;
+        width: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.4rem;
+        list-style: none;
+        align-items: center;
+      }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: color 0.25s;
+      }
+      .nav-links a:hover {
+        color: var(--gold2);
+      }
+      .nav-cta {
+        background: transparent !important;
+        color: var(--gold2) !important;
+        border: 1px solid var(--border) !important;
+        padding: 0.48rem 1.5rem !important;
+        border-radius: 2px;
+        transition:
+          background 0.25s,
+          border-color 0.25s !important;
+      }
+      .nav-cta:hover {
+        background: rgba(184, 150, 46, 0.1) !important;
+        border-color: var(--gold2) !important;
+      }
+
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 9rem 3.5rem 6rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 80% at 75% 50%,
+            rgba(17, 35, 80, 0.95) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 35% 35% at 15% 70%,
+            rgba(184, 150, 46, 0.04) 0%,
+            transparent 65%
+          ),
+          linear-gradient(155deg, #060f26 0%, #08142f 100%);
+      }
+      .geo-right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 52%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .geo-right svg {
+        width: 100%;
+        height: 100%;
+        opacity: 0.045;
+      }
+      .hero-rule {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          var(--gold) 30%,
+          var(--gold2) 70%,
+          transparent 100%
+        );
+        opacity: 0.5;
+      }
+      .hero-inner {
+        position: relative;
+        max-width: 660px;
+      }
+
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        animation: fadeUp 0.6s 0.15s both;
+      }
+      .eyebrow-line {
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+      }
+      .eyebrow-text {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold2);
+      }
+
+      h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(3rem, 5.5vw, 5.2rem);
+        line-height: 1.07;
+        color: var(--white);
+        margin-bottom: 1.8rem;
+        animation: fadeUp 0.6s 0.3s both;
+      }
+      h1 em {
+        font-style: italic;
+        display: block;
+        background: linear-gradient(90deg, var(--gold2), var(--gold3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-sub {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.85;
+        color: var(--muted);
+        max-width: 500px;
+        margin-bottom: 3rem;
+        animation: fadeUp 0.6s 0.45s both;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        animation: fadeUp 0.6s 0.6s both;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.95rem 2.2rem;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+        font-size: 0.82rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: all 0.25s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold2));
+        color: var(--navy);
+      }
+      .btn-gold:hover {
+        opacity: 0.88;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(184, 150, 46, 0.28);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--light);
+        border: 1px solid rgba(200, 212, 234, 0.2);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold2);
+        color: var(--gold3);
+        transform: translateY(-2px);
+      }
+
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        animation: fadeUp 0.6s 0.75s both;
+      }
+      .h-stat {
+        flex: 1;
+        min-width: 120px;
+        padding: 1.8rem 2rem 0 0;
+      }
+      .h-stat + .h-stat {
+        padding-left: 2rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .h-stat .num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+      }
+      .h-stat .num sup {
+        font-size: 1.2rem;
+        color: var(--gold2);
+        vertical-align: super;
+      }
+      .h-stat .label {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.4rem;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── DIVIDERS ── */
+      .gold-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--gold) 30%,
+          var(--gold2) 70%,
+          transparent 100%
+        );
+        opacity: 0.5;
+      }
+
+      /* ── SECTION BASE ── */
+      section {
+        padding: 7rem 3.5rem;
+      }
+      .s-label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .s-label::after {
+        content: "";
+        flex: 1;
+        max-width: 40px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.6;
+      }
+      h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        color: var(--white);
+        line-height: 1.18;
+        margin-bottom: 1rem;
+      }
+      .s-intro {
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+        max-width: 560px;
+        margin-bottom: 3.5rem;
+      }
+
+      /* ── INTRO BAND ── */
+      #intro {
+        background: var(--navy2);
+        padding: 5rem 3.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+      @media (max-width: 900px) {
+        #intro {
+          grid-template-columns: 1fr;
+        }
+      }
+      .intro-block {
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--border);
+      }
+      .intro-block h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.6rem;
+      }
+      .intro-block p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      /* ── SERVICES ── */
+      #servicios {
+        background: var(--navy);
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(184, 150, 46, 0.08);
+        border: 1px solid rgba(184, 150, 46, 0.08);
+      }
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 540px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .svc-card {
+        background: var(--navy);
+        padding: 2.8rem 2.2rem;
+        transition: background 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+      .svc-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s;
+      }
+      .svc-card:hover {
+        background: var(--navy3);
+      }
+      .svc-card:hover::before {
+        transform: scaleX(1);
+      }
+      .svc-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: rgba(184, 150, 46, 0.12);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+      .svc-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.01em;
+      }
+      .svc-card p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+      .svc-tag {
+        display: inline-block;
+        margin-top: 1.4rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.15rem;
+      }
+
+      /* ── PROCESS ── */
+      #proceso {
+        background: var(--navy2);
+        padding-bottom: 0;
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      @media (max-width: 800px) {
+        .process-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 440px) {
+        .process-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .process-step {
+        background: var(--navy2);
+        padding: 2.5rem 2rem;
+        transition: background 0.25s;
+      }
+      .process-step:hover {
+        background: var(--navy3);
+      }
+      .step-num {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        color: var(--gold2);
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+      }
+      .process-step h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+      }
+      .process-step p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.75;
+        font-weight: 300;
+      }
+
+      /* ── NOSOTROS ── */
+      #nosotros {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        #nosotros {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+        }
+      }
+
+      .pillars {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 2.5rem;
+      }
+      .pillar {
+        display: flex;
+        gap: 1.8rem;
+        padding: 1.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        align-items: flex-start;
+      }
+      .pillar:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .pillar-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: rgba(184, 150, 46, 0.2);
+        line-height: 1;
+        min-width: 36px;
+        flex-shrink: 0;
+        margin-top: -0.2rem;
+      }
+      .pillar h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.4rem;
+        letter-spacing: 0.02em;
+      }
+      .pillar p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      .about-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .testimonial-card {
+        background: var(--navy2);
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        padding: 2.5rem 2.2rem;
+        position: relative;
+      }
+      .quote-mark {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5rem;
+        color: rgba(184, 150, 46, 0.15);
+        line-height: 0.7;
+        margin-bottom: 0.5rem;
+      }
+      .testimonial-card blockquote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--light);
+        line-height: 1.75;
+      }
+      .testimonial-meta {
+        margin-top: 1.4rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold2);
+      }
+      .stars {
+        color: var(--gold2);
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
+        margin-top: 0.3rem;
+      }
+
+      .metric-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: rgba(184, 150, 46, 0.08);
+        border: 1px solid rgba(184, 150, 46, 0.08);
+      }
+      .metric {
+        background: var(--navy2);
+        padding: 1.8rem;
+        text-align: center;
+      }
+      .metric .m-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1;
+      }
+      .metric .m-num span {
+        color: var(--gold2);
+      }
+      .metric .m-label {
+        font-size: 0.72rem;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 0.4rem;
+      }
+
+      /* ── ASEGURADORAS ── */
+      #aseguradoras {
+        background: var(--navy2);
+      }
+      .insurers-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      @media (max-width: 800px) {
+        .insurers-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .insurers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .insurer {
+        background: var(--navy2);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        transition: background 0.25s;
+        cursor: default;
+      }
+      .insurer:hover {
+        background: var(--navy3);
+      }
+      .insurer-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--light);
+        transition: color 0.25s;
+      }
+      .insurer:hover .insurer-name {
+        color: var(--gold2);
+      }
+      .insurer-type {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+
+      /* ── FAQ ── */
+      #faq {
+        background: var(--navy);
+      }
+      .faq-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 6rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .faq-wrap {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .faq-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+      }
+      .faq-item:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .faq-q {
+        width: 100%;
+        background: none;
+        border: none;
+        color: var(--light);
+        padding: 1.5rem 0;
+        font-family: "Jost", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: left;
+        transition: color 0.2s;
+      }
+      .faq-q:hover {
+        color: var(--gold2);
+      }
+      .faq-icon {
+        width: 22px;
+        height: 22px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        color: var(--gold2);
+        flex-shrink: 0;
+        transition:
+          transform 0.3s,
+          background 0.2s;
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+        background: rgba(184, 150, 46, 0.1);
+      }
+      .faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.38s ease,
+          padding 0.38s;
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.85;
+        font-weight: 300;
+        padding: 0;
+      }
+      .faq-item.open .faq-a {
+        max-height: 220px;
+        padding-bottom: 1.5rem;
+      }
+
+      .faq-cta {
+        background: var(--navy2);
+        border: 1px solid var(--border);
+        padding: 3rem 2.5rem;
+        position: sticky;
+        top: 100px;
+      }
+      .faq-cta h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--white);
+        line-height: 1.25;
+        margin-bottom: 1rem;
+      }
+      .faq-cta p {
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+      .faq-cta .divider {
+        height: 1px;
+        background: var(--border);
+        margin: 1.8rem 0;
+      }
+      .contact-detail {
+        margin-bottom: 1rem;
+      }
+      .cd-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+      .cd-val {
+        font-size: 0.9rem;
+        color: var(--light);
+        font-weight: 400;
+      }
+      .cd-val a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .cd-val a:hover {
+        color: var(--gold2);
+      }
+
+      /* ── CONTACT ── */
+      #contacto {
+        background: var(--navy2);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        padding: 0;
+      }
+      @media (max-width: 800px) {
+        #contacto {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-left {
+        padding: 7rem 3.5rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .contact-right {
+        padding: 7rem 3.5rem;
+      }
+
+      .contact-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+        margin-top: 2.5rem;
+      }
+      .ci {
+        display: flex;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+      .ci-icon {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--border);
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        flex-shrink: 0;
+        font-family: "Jost", sans-serif;
+      }
+      .ci-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+      .ci-val {
+        font-size: 0.95rem;
+        color: var(--light);
+        line-height: 1.6;
+        font-weight: 400;
+      }
+      .ci-val a {
+        color: var(--light);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .ci-val a:hover {
+        color: var(--gold2);
+      }
+
+      .schedule-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+      }
+      .schedule-table td {
+        padding: 0.85rem 0;
+        font-size: 0.875rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .schedule-table td:last-child {
+        text-align: right;
+        color: var(--muted);
+      }
+      .schedule-table tr.closed td {
+        color: rgba(122, 138, 170, 0.4);
+      }
+
+      .cta-strip {
+        margin-top: 3rem;
+        padding: 2rem;
+        border: 1px solid var(--border);
+        background: rgba(184, 150, 46, 0.03);
+      }
+      .cta-strip p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.75;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      .pull-quote {
+        margin-top: 2.5rem;
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .pull-quote q {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--light);
+        line-height: 1.75;
+        quotes: none;
+      }
+      .pull-quote cite {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-top: 1rem;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      /* ── MAP ── */
+      #mapa {
+        padding: 0;
+      }
+      .map-container {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(95%) sepia(15%) brightness(0.78);
+      }
+      .map-badge {
+        position: absolute;
+        top: 2rem;
+        left: 3.5rem;
+        background: var(--navy);
+        border: 1px solid var(--border);
+        padding: 1.2rem 1.8rem;
+      }
+      .map-badge strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.2rem;
+      }
+      .map-badge span {
+        font-size: 0.78rem;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #030a1a;
+        border-top: 1px solid rgba(184, 150, 46, 0.12);
+        padding: 3.5rem;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      @media (max-width: 700px) {
+        .footer-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+      .footer-brand img {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        margin-bottom: 1.2rem;
+      }
+      .footer-brand p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: 280px;
+      }
+      .footer-col h5 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold2);
+        margin-bottom: 1.2rem;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .footer-col ul li {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .footer-col ul li a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold2);
+      }
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-bottom p {
+        font-size: 0.75rem;
+        color: rgba(122, 138, 170, 0.55);
+        letter-spacing: 0.05em;
+      }
+      .social-links {
+        display: flex;
+        gap: 0.75rem;
+      }
+      .social-links a {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        padding: 0.45rem 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2px;
+        transition: all 0.2s;
+      }
+      .social-links a:hover {
+        color: var(--gold2);
+        border-color: var(--border);
+      }
+
+      /* ── REVEAL ── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 700px) {
+        nav {
+          padding: 0 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        section {
+          padding: 5rem 1.5rem;
+        }
+        #hero {
+          padding: 8rem 1.5rem 5rem;
+        }
+        h1 {
+          font-size: 2.8rem;
+        }
+        .contact-left,
+        .contact-right {
+          padding: 4rem 1.5rem;
+        }
+        .map-badge {
+          left: 1.5rem;
+        }
+        footer {
+          padding: 3rem 1.5rem;
+        }
+        #intro {
+          padding: 4rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">
+        <img src="logoibarra.png" alt="IGS Ibarra Gardner Seguros" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#aseguradoras">Aseguradoras</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li>
+          <a
+            href="https://calendly.com/igseguros"
+            target="_blank"
+            class="nav-cta"
+            >Agenda una asesoría</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-rule"></div>
+      <div class="geo-right">
+        <svg
+          viewBox="0 0 700 900"
+          preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="450"
+            cy="450"
+            r="380"
+            fill="none"
+            stroke="white"
+            stroke-width="1"
+          />
+          <circle
+            cx="450"
+            cy="450"
+            r="280"
+            fill="none"
+            stroke="white"
+            stroke-width=".8"
+          />
+          <circle
+            cx="450"
+            cy="450"
+            r="180"
+            fill="none"
+            stroke="white"
+            stroke-width=".6"
+          />
+          <circle
+            cx="450"
+            cy="450"
+            r="90"
+            fill="none"
+            stroke="white"
+            stroke-width=".5"
+          />
+          <line
+            x1="70"
+            y1="0"
+            x2="700"
+            y2="900"
+            stroke="white"
+            stroke-width=".5"
+          />
+          <line
+            x1="0"
+            y1="220"
+            x2="700"
+            y2="680"
+            stroke="white"
+            stroke-width=".4"
+          />
+          <line
+            x1="250"
+            y1="0"
+            x2="250"
+            y2="900"
+            stroke="white"
+            stroke-width=".3"
+          />
+          <polygon
+            points="450,70 640,360 640,540 450,830 260,540 260,360"
+            fill="none"
+            stroke="white"
+            stroke-width=".6"
+          />
+        </svg>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text"
+            >Despacho de Seguros · Hermosillo, Sonora</span
+          >
+        </div>
+        <h1>
+          Más de 20 años<br />protegiendo<br /><em>lo que más quieres.</em>
+        </h1>
+        <p class="hero-sub">
+          En IGS Ibarra Gardner Seguros brindamos asesoría personalizada para
+          personas, familias y empresas en Hermosillo y Sonora. Comparamos
+          opciones entre las principales aseguradoras del país para encontrar la
+          cobertura que realmente se adapta a tu vida y presupuesto.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://calendly.com/igseguros"
+            target="_blank"
+            class="btn btn-gold"
+            >Agenda tu asesoría gratuita</a
+          >
+          <a href="#servicios" class="btn btn-outline">Conocer coberturas</a>
+        </div>
+        <div class="hero-stats">
+          <div class="h-stat">
+            <div class="num">20<sup>+</sup></div>
+            <div class="label">Años de experiencia</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">15<sup>k</sup></div>
+            <div class="label">Seguidores en Instagram</div>
+          </div>
+          <div class="h-stat">
+            <div class="num">1,000<sup>+</sup></div>
+            <div class="label">Publicaciones educativas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="gold-divider"></div>
+
+    <!-- INTRO PILLARS -->
+    <div id="intro">
+      <div class="intro-block reveal">
+        <h3>Asesoría independiente</h3>
+        <p>
+          No somos empleados de ninguna aseguradora. Trabajamos para ti. Eso nos
+          permite comparar con objetividad y recomendarte la opción que más te
+          conviene, no la que más nos favorece como despacho.
+        </p>
+      </div>
+      <div class="intro-block reveal" style="transition-delay: 0.15s">
+        <h3>Acompañamiento en siniestros</h3>
+        <p>
+          Cuando ocurre un imprevisto, estamos contigo. Te representamos ante la
+          aseguradora, te orientamos en el proceso de reclamación y nos
+          aseguramos de que recibas lo que te corresponde sin complicaciones
+          innecesarias.
+        </p>
+      </div>
+      <div class="intro-block reveal" style="transition-delay: 0.3s">
+        <h3>Contenido que educa</h3>
+        <p>
+          Con más de 1,000 publicaciones en redes sociales, compartimos
+          información clara y útil sobre seguros en México. Queremos que
+          entiendas tu póliza, no solamente que la firmes. Una decisión
+          informada siempre es una mejor decisión.
+        </p>
+      </div>
+    </div>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+      <div class="s-label">Coberturas disponibles</div>
+      <h2>Los seguros que necesitas,<br />explicados con claridad.</h2>
+      <p class="s-intro">
+        Cada persona tiene circunstancias distintas. En IGS no ofrecemos
+        paquetes genéricos: analizamos tu situación particular y te presentamos
+        las opciones reales disponibles en el mercado, con sus diferencias,
+        ventajas y costos expuestos de forma transparente.
+      </p>
+
+      <div class="services-grid">
+        <div class="svc-card reveal">
+          <div class="svc-number">01</div>
+          <h3>Gastos Médicos Mayores Individual</h3>
+          <p>
+            Cobertura hospitalaria, cirugías, estudios de diagnóstico y
+            medicamentos de alto costo. Planes con red cerrada o abierta,
+            deducibles flexibles y suma asegurada desde cobertura regional hasta
+            ilimitada. Disponible para personas de cualquier edad, con análisis
+            de condiciones preexistentes incluido.
+          </p>
+          <span class="svc-tag">Individual · Familiar</span>
+        </div>
+        <div class="svc-card reveal" style="transition-delay: 0.1s">
+          <div class="svc-number">02</div>
+          <h3>Gastos Médicos Empresariales</h3>
+          <p>
+            Pólizas colectivas para empresas de todos los tamaños. Mejorar el
+            bienestar de tu equipo reduce la rotación de personal y representa
+            un beneficio real que atrae y fideliza talento. Cotizamos con
+            múltiples aseguradoras para encontrar el equilibrio adecuado entre
+            cobertura, red médica y costo por colaborador.
+          </p>
+          <span class="svc-tag">Empresas · Colectivo</span>
+        </div>
+        <div class="svc-card reveal" style="transition-delay: 0.2s">
+          <div class="svc-number">03</div>
+          <h3>Seguro de Maternidad</h3>
+          <p>
+            Cobertura especializada para gastos relacionados con embarazo, parto
+            y recién nacido. Analizamos tiempos de espera, exclusiones y
+            beneficios adicionales de cada aseguradora para que puedas tomar la
+            mejor decisión antes de planear tu familia. La anticipación marca la
+            diferencia en este ramo.
+          </p>
+          <span class="svc-tag">Médico · Maternidad</span>
+        </div>
+        <div class="svc-card reveal">
+          <div class="svc-number">04</div>
+          <h3>Seguro de Automóvil</h3>
+          <p>
+            Coberturas amplia, limitada y básica estandarizada para todo tipo de
+            vehículo. Responsabilidad civil, robo total, asistencia vial las 24
+            horas, defensa legal y gastos médicos a ocupantes. Te ayudamos a
+            elegir la cobertura adecuada según el valor comercial, antigüedad y
+            uso específico de tu vehículo.
+          </p>
+          <span class="svc-tag">Auto · Flotillas</span>
+        </div>
+        <div class="svc-card reveal" style="transition-delay: 0.1s">
+          <div class="svc-number">05</div>
+          <h3>Seguro de Vida</h3>
+          <p>
+            Protección económica para tu familia en caso de fallecimiento o
+            invalidez total y permanente. Planes de vida riesgo con primas
+            anuales ajustadas a tu perfil, o seguros de vida con componente de
+            ahorro que combinan protección con rendimiento financiero a largo
+            plazo. Asesoría sin presión ni compromisos previos.
+          </p>
+          <span class="svc-tag">Vida · Retiro</span>
+        </div>
+        <div class="svc-card reveal" style="transition-delay: 0.2s">
+          <div class="svc-number">06</div>
+          <h3>Plan de Ahorro e Inversión</h3>
+          <p>
+            Instrumentos financieros que combinan protección con rendimiento
+            real. Ideales para construir un fondo educativo, un patrimonio de
+            retiro o un fondo de emergencia, con cobertura de vida incluida
+            desde el primer día. Disponibles en horizontes de inversión de 5 a
+            20 años con aportaciones flexibles.
+          </p>
+          <span class="svc-tag">Ahorro · Inversión</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso">
+      <div class="s-label">Cómo trabajamos</div>
+      <h2>Un proceso claro,<br />sin sorpresas.</h2>
+      <p class="s-intro">
+        Desde la primera consulta hasta la renovación de tu póliza —y mucho más
+        allá— te acompañamos en cada etapa con transparencia y sin
+        complicaciones.
+      </p>
+    </section>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-num">Paso 01</div>
+        <h4>Diagnóstico inicial</h4>
+        <p>
+          En una llamada o reunión completamente gratuita, conocemos tu
+          situación de vida, necesidades reales y presupuesto disponible. Sin
+          cuestionarios complicados, sin compromisos de ningún tipo.
+        </p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.12s">
+        <div class="step-num">Paso 02</div>
+        <h4>Comparativa de opciones</h4>
+        <p>
+          Consultamos con múltiples aseguradoras y construimos una comparativa
+          honesta que incluye coberturas, exclusiones relevantes, costos y
+          diferencias importantes para tu caso específico.
+        </p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.24s">
+        <div class="step-num">Paso 03</div>
+        <h4>Contratación acompañada</h4>
+        <p>
+          Te guiamos en el proceso de contratación, revisamos la póliza contigo
+          punto por punto y nos aseguramos de que entiendas exactamente qué
+          cubre tu seguro y, igual de importante, qué no cubre.
+        </p>
+      </div>
+      <div class="process-step reveal" style="transition-delay: 0.36s">
+        <div class="step-num">Paso 04</div>
+        <h4>Servicio continuo</h4>
+        <p>
+          Somos tu contacto permanente para renovaciones, ajustes de cobertura
+          y, especialmente, para acompañarte cuando necesitas hacer una
+          reclamación. El servicio no termina cuando firmas la póliza.
+        </p>
+      </div>
+    </div>
+    <div style="background: var(--navy2); height: 7rem"></div>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros">
+      <div>
+        <div class="s-label">Por qué elegirnos</div>
+        <h2>El despacho que<br />Hermosillo recomienda.</h2>
+        <p
+          style="
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.85;
+            font-weight: 300;
+            max-width: 480px;
+          "
+        >
+          Con más de dos décadas en el mercado asegurador sonorense, hemos
+          construido nuestra reputación sobre un principio simple: el cliente
+          primero, siempre. Eso significa asesoría honesta, información clara y
+          presencia real cuando más se necesita.
+        </p>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <div class="pillar-num">01</div>
+            <div>
+              <h4>Independencia total</h4>
+              <p>
+                No tenemos exclusividad con ninguna aseguradora. Trabajamos con
+                las principales compañías del mercado y elegimos objetivamente
+                la que mejor se adapta a cada cliente, en función de sus
+                necesidades reales y no de las comisiones disponibles.
+              </p>
+            </div>
+          </div>
+          <div class="pillar reveal">
+            <div class="pillar-num">02</div>
+            <div>
+              <h4>Asesoría verdaderamente personalizada</h4>
+              <p>
+                Cada caso es diferente. No existe un paquete predeterminado que
+                funcione para todos: analizamos tu situación específica y
+                diseñamos una recomendación a la medida de tus necesidades,
+                circunstancias y posibilidades económicas.
+              </p>
+            </div>
+          </div>
+          <div class="pillar reveal">
+            <div class="pillar-num">03</div>
+            <div>
+              <h4>Presencia real en siniestros</h4>
+              <p>
+                Somos tu representante ante la aseguradora cuando más lo
+                necesitas. Te orientamos sobre la documentación requerida, damos
+                seguimiento al proceso y trabajamos para que recibas lo que te
+                corresponde en el menor tiempo posible, sin que tengas que
+                enfrentarte solo a la burocracia.
+              </p>
+            </div>
+          </div>
+          <div class="pillar reveal">
+            <div class="pillar-num">04</div>
+            <div>
+              <h4>Más de 20 años de trayectoria</h4>
+              <p>
+                La experiencia nos ha enseñado a anticipar problemas, reconocer
+                los matices de cada aseguradora y encontrar soluciones donde
+                otros encuentran callejones sin salida. Ese conocimiento
+                acumulado está al servicio de cada cliente que nos elige.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="testimonial-card reveal">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            Llevan años con nosotros — seguro médico familiar y de auto. Siempre
+            que tuvimos alguna duda o un siniestro, nos respondieron de
+            inmediato. Son de los pocos asesores que realmente te explican tu
+            póliza con honestidad y sin rodeos.
+          </blockquote>
+          <div class="testimonial-meta">
+            Cliente verificado · Facebook Reviews
+          </div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="quote-mark">"</div>
+          <blockquote>
+            Contraté mi seguro médico con ellos hace seis años. Cuando tuve que
+            usarlo de verdad, estuvieron presentes en todo el proceso sin que yo
+            tuviera que insistir. No solo venden seguros, acompañan de verdad.
+          </blockquote>
+          <div class="testimonial-meta">Cliente verificado · Instagram</div>
+          <div class="stars">★ ★ ★ ★ ★</div>
+        </div>
+        <div class="metric-pair reveal">
+          <div class="metric">
+            <div class="m-num">15<span>k</span></div>
+            <div class="m-label">Seguidores en Instagram</div>
+          </div>
+          <div class="metric">
+            <div class="m-num">20<span>+</span></div>
+            <div class="m-label">Años en el mercado</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASEGURADORAS -->
+    <section id="aseguradoras">
+      <div class="s-label">Nuestros aliados</div>
+      <h2>Trabajamos con las principales<br />aseguradoras de México.</h2>
+      <p class="s-intro">
+        Contar con acceso a múltiples compañías nos permite comparar coberturas,
+        precios y condiciones de forma objetiva para que siempre obtengas el
+        mejor valor por tu inversión. No estamos atados a ninguna marca.
+      </p>
+      <div class="insurers-grid">
+        <div class="insurer reveal">
+          <div class="insurer-name">GNP Seguros</div>
+          <div class="insurer-type">Médico · Vida · Auto</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">AXA México</div>
+          <div class="insurer-type">Médico · Vida · Ahorro</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Metlife</div>
+          <div class="insurer-type">Vida · Ahorro · Retiro</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Mapfre</div>
+          <div class="insurer-type">Auto · Hogar · Empresarial</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Qualitas</div>
+          <div class="insurer-type">Auto · Flotillas</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">HDI Seguros</div>
+          <div class="insurer-type">Auto · Médico</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Afirme</div>
+          <div class="insurer-type">Auto · Vida</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Seguros Monterrey</div>
+          <div class="insurer-type">Médico · Vida</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">Chubb</div>
+          <div class="insurer-type">Empresarial · Hogar</div>
+        </div>
+        <div class="insurer reveal">
+          <div class="insurer-name">BBVA Seguros</div>
+          <div class="insurer-type">Vida · Ahorro</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="faq-wrap">
+        <div>
+          <div class="s-label">Preguntas frecuentes</div>
+          <h2>Lo que más nos<br />preguntan.</h2>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--muted);
+              line-height: 1.85;
+              font-weight: 300;
+              margin-top: 0.5rem;
+            "
+          >
+            Si tienes una duda que no aparece aquí, agenda una asesoría gratuita
+            o escríbenos directamente a través de nuestras redes sociales.
+          </p>
+          <div class="faq-list" style="margin-top: 2.5rem">
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿Cuánto cuesta un seguro de gastos médicos?<span
+                  class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                El costo depende de tu edad, historial de salud, la aseguradora
+                que elijas y el nivel de cobertura deseado. En tu asesoría te
+                presentamos una comparativa real entre varias opciones con
+                rangos de precio claros y específicos para que puedas tomar una
+                decisión con información completa y sin sorpresas.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿Puedo contratar si ya tengo una condición preexistente?<span
+                  class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                Depende de la condición específica y de la aseguradora. Algunas
+                excluyen la preexistencia de manera permanente, otras la cubren
+                tras un período de espera, y hay opciones que la cubren de forma
+                limitada. En tu asesoría exploramos todas las alternativas
+                disponibles para tu caso particular, sin compromisos previos.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿La asesoría tiene algún costo?<span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                No. La asesoría es completamente gratuita y sin ningún tipo de
+                compromiso posterior. Nos reunimos contigo, analizamos tu
+                situación y te presentamos las opciones disponibles. Si decides
+                contratar, lo harás porque encontraste la cobertura que
+                buscabas, no porque hayas sentido presión de nuestra parte.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿En qué se diferencia un despacho de una aseguradora
+                directa?<span class="faq-icon">+</span>
+              </button>
+              <div class="faq-a">
+                Un despacho independiente como IGS trabaja para el cliente, no
+                para una compañía específica. Eso nos permite comparar múltiples
+                opciones, recomendarte con objetividad y acompañarte en
+                siniestros sin conflicto de interés. Una aseguradora directa
+                únicamente puede ofrecerte sus propios productos, lo que limita
+                significativamente tus opciones de comparación.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿Me ayudan si necesito hacer una reclamación?<span
+                  class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                Sí, y ese es uno de nuestros compromisos más importantes con
+                cada cliente. Somos tu representante ante la aseguradora: te
+                orientamos sobre la documentación necesaria, hacemos seguimiento
+                activo del proceso y trabajamos para que recibas lo que te
+                corresponde en el menor tiempo posible.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿Ofrecen seguros para empresas pequeñas?<span class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                Sí. Trabajamos con empresas de todos los tamaños, desde negocios
+                con 5 empleados hasta corporativos con cientos de colaboradores.
+                Cotizamos planes colectivos de gastos médicos y otros beneficios
+                adaptados al tamaño, giro y presupuesto de tu organización.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                ¿Puedo cambiar de aseguradora sin perder mi antigüedad?<span
+                  class="faq-icon"
+                  >+</span
+                >
+              </button>
+              <div class="faq-a">
+                En muchos casos es posible realizar una portabilidad de póliza
+                que respete las condiciones adquiridas. El proceso varía según
+                la aseguradora y el tipo de plan. Te asesoramos sin costo alguno
+                para evaluar si un cambio te conviene y, en caso afirmativo,
+                cómo realizarlo correctamente para no perder beneficios
+                acumulados.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="faq-cta reveal">
+            <h3>¿Listo para proteger lo que más importa?</h3>
+            <p>
+              Una conversación de 30 minutos es suficiente para entender tus
+              necesidades y presentarte opciones reales. Sin costos ocultos, sin
+              presión, sin letra chica sin explicar.
+            </p>
+            <a
+              href="https://calendly.com/igseguros"
+              target="_blank"
+              class="btn btn-gold"
+              style="width: 100%; justify-content: center"
+            >
+              Agendar asesoría gratuita
+            </a>
+            <div class="divider"></div>
+            <div class="contact-detail">
+              <div class="cd-label">Dirección</div>
+              <div class="cd-val">
+                Dr. Pesqueira #54 Int. 7BB Altos<br />Col. Centenario,
+                Hermosillo, Son.
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="cd-label">Instagram</div>
+              <div class="cd-val">
+                <a href="https://www.instagram.com/igs.seguros/" target="_blank"
+                  >@igs.seguros</a
+                >
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="cd-label">Agenda en línea</div>
+              <div class="cd-val">
+                <a href="https://calendly.com/igseguros" target="_blank"
+                  >calendly.com/igseguros</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <div class="gold-divider"></div>
+    <section id="contacto">
+      <div class="contact-left">
+        <div class="s-label">Ubicación y horario</div>
+        <h2>Visítanos en<br />Hermosillo.</h2>
+        <div class="contact-items">
+          <div class="ci">
+            <div class="ci-icon">Dir</div>
+            <div>
+              <div class="ci-label">Dirección</div>
+              <div class="ci-val">
+                Dr. Pesqueira #54 Int. 7BB Altos<br />Col. Centenario,
+                Hermosillo, Sonora 83240
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">IG</div>
+            <div>
+              <div class="ci-label">Instagram</div>
+              <div class="ci-val">
+                <a href="https://www.instagram.com/igs.seguros/" target="_blank"
+                  >@igs.seguros</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">Cal</div>
+            <div>
+              <div class="ci-label">Citas en línea</div>
+              <div class="ci-val">
+                <a href="https://calendly.com/igseguros" target="_blank"
+                  >calendly.com/igseguros</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="schedule-table">
+          <tr>
+            <td>Lunes</td>
+            <td>10:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Martes</td>
+            <td>10:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Miércoles</td>
+            <td>10:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Jueves</td>
+            <td>10:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Viernes</td>
+            <td>10:00 — 18:00</td>
+          </tr>
+          <tr>
+            <td>Sábado</td>
+            <td>Con cita previa</td>
+          </tr>
+          <tr class="closed">
+            <td>Domingo</td>
+            <td>Cerrado</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="contact-right">
+        <div class="s-label">Agenda tu asesoría</div>
+        <h2>Hablemos sin<br />compromisos.</h2>
+        <p
+          style="
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.85;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+          "
+        >
+          En IGS creemos que una buena asesoría comienza con escuchar. Cuéntanos
+          qué buscas proteger — tu salud, tu familia, tu negocio, tu patrimonio
+          — y nosotros encontramos la mejor forma de hacerlo dentro de tu
+          presupuesto real.
+        </p>
+        <div class="cta-strip">
+          <p>
+            Agenda directamente en nuestro calendario en línea y elige el
+            horario que mejor te acomode. La sesión es completamente gratuita,
+            dura aproximadamente 30 minutos y puede realizarse de forma
+            presencial en nuestras oficinas o de manera virtual.
+          </p>
+          <a
+            href="https://calendly.com/igseguros"
+            target="_blank"
+            class="btn btn-gold"
+            >Reservar tiempo en el calendario</a
+          >
+        </div>
+        <div class="pull-quote">
+          <q
+            >Asegurar lo que más quieres no debería ser complicado. Nuestro
+            trabajo es hacerlo simple, claro y honesto.</q
+          >
+          <cite>IGS Ibarra Gardner Seguros · Hermosillo, Sonora</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <div id="mapa">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487!2d-110.9350!3d29.0950!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce84e90d9f1d1d%3A0x0!2sDr+Pesqueira+54%2C+Centenario%2C+Hermosillo%2C+Son.!5e0!3m2!1ses!2smx!4v1"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+        <div class="map-badge">
+          <strong>IGS Ibarra Gardner Seguros</strong>
+          <span>Dr. Pesqueira #54, Col. Centenario · Hermosillo, Son.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="logoibarra.png" alt="IGS Ibarra Gardner Seguros" />
+          <p>
+            Despacho de seguros independiente con más de 20 años en Hermosillo,
+            Sonora. Asesoría personalizada para personas, familias y empresas.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Coberturas</h5>
+          <ul>
+            <li><a href="#servicios">Gastos Médicos Individual</a></li>
+            <li><a href="#servicios">Gastos Médicos Empresarial</a></li>
+            <li><a href="#servicios">Seguro de Maternidad</a></li>
+            <li><a href="#servicios">Seguro de Automóvil</a></li>
+            <li><a href="#servicios">Seguro de Vida</a></li>
+            <li><a href="#servicios">Plan de Ahorro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Despacho</h5>
+          <ul>
+            <li><a href="#proceso">Cómo trabajamos</a></li>
+            <li><a href="#nosotros">Sobre IGS</a></li>
+            <li><a href="#aseguradoras">Aseguradoras aliadas</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li>
+              <a href="https://calendly.com/igseguros" target="_blank"
+                >Agendar asesoría</a
+              >
+            </li>
+            <li>
+              <a href="https://www.instagram.com/igs.seguros/" target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2025 IGS Ibarra Gardner Seguros · Hermosillo, Sonora · Todos los
+          derechos reservados.
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/igs.seguros/" target="_blank"
+            >Instagram</a
+          >
+          <a href="https://calendly.com/igseguros" target="_blank">Agendar</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(btn) {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item.open")
+          .forEach((el) => el.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
